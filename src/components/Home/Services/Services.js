@@ -5,7 +5,7 @@ import './Services.css';
 const Services = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('https://raw.githubusercontent.com/musasazib/fake-dada/main/src/components/FitLab/productFakedata.json')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])
