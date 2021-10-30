@@ -11,7 +11,7 @@ const Booking = () => {
     const [details, setDetails] = useState({});
     console.log(details)
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://secret-sands-29500.herokuapp.com/services')
             .then(res => res.json())
             .then(data => {
                 const book = data.find(td => td._id === serviceId);
@@ -26,7 +26,7 @@ const Booking = () => {
     } = useForm();
 
     const onSubmit = (data) => {
-        fetch("http://localhost:5000/orders", {
+        fetch("https://secret-sands-29500.herokuapp.com/orders", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

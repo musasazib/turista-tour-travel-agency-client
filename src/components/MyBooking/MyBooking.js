@@ -6,7 +6,7 @@ const MyBooking = () => {
     const { user } = useAuth();
     const [booking, setBooking] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/myBooking/${user?.email}`)
+        fetch(`https://secret-sands-29500.herokuapp.com/myBooking/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setBooking(data));
     }, [user.email]);
@@ -14,7 +14,7 @@ const MyBooking = () => {
     const handleDeleteUser = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`
+            const url = `https://secret-sands-29500.herokuapp.com/orders/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
