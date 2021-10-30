@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
-import './Admin.css';
+import useAuth from '../../hooks/useAuth';
 
-const Admin = () => {
-    const [services, setServices] = useState([]);
+const MyBooking = () => {
+    const { user } = useAuth();
+    const [booking, setBooking] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
-            .then(res => res.json())
-            .then(data => setServices(data))
-    }, []);
+        fetch(`http://localhost:5000/myBooking/${user?.email}`)
+            .then((res) => res.json())
+            .then((data) => setBooking(data));
+    }, [user.email]);
 
     const handleDeleteUser = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
@@ -21,8 +22,8 @@ const Admin = () => {
                 .then(data => {
                     if (data.deletedCount > 0) {
                         alert('Delete Successfully');
-                        const remainingUser = services.filter(service => service._id !== id);
-                        setServices(remainingUser);
+                        const remainingUser = booking.filter(book => book._id !== id);
+                        setBooking(remainingUser);
                     }
                 })
         }
@@ -31,29 +32,29 @@ const Admin = () => {
     return (
         <div>
             <div className="container">
-                <h2>Total Users: {services.length}</h2>
+                <h2>My Booking: {booking?.length}</h2>
                 <Table striped bordered hover>
                     <thead>
                         <tr>
                             <th>SL</th>
-                            <th>User Name</th>
                             <th>Place Name</th>
-                            <th>Amount</th>
+                            <th>Tour Price</th>
+                            <th>Image Link</th>
                             <th>Action</th>
                         </tr>
                     </thead>
-                    {services?.map((pd, index) => (
+                    {booking?.map((pd, index) => (
                         <tbody>
                             <tr>
-                                <td>{index + 1}</td>
-                                <td>{pd.name}</td>
+                                <td>{index+1}</td>
                                 <td>{pd.date}</td>
                                 <td>{pd.description}</td>
+                                <td>{pd.image}</td>
                                 <button
                                     onClick={() => handleDeleteUser(pd._id)}
                                     className="btn bg-danger p-2"
                                 >
-                                    Cancel
+                                    Delete
                                 </button>
                             </tr>
                         </tbody>
@@ -64,4 +65,4 @@ const Admin = () => {
     );
 };
 
-export default Admin;
+export default MyBooking;

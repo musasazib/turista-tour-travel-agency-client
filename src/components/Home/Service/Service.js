@@ -1,19 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Service.css'
 
 const Service = ({ service }) => {
-    const { img, name, description } = service;
-
-    const handleMenageUser = () => {
-
-    }
+    const { id, img, name, description } = service;
 
     return (
         <div className="service-product pb-3">
             <img src={img} alt="" />
             <h3 className="name">{name}</h3>
             <p>{description}</p>
-            <button className="btn btn-warning" onClick={() => handleMenageUser(service._id)}>Add to Cart</button>
+            <Link to={`/booking/${id}`}>
+                <button className="btn btn-warning">BOOKING</button>
+            </Link>
         </div>
     );
 };
