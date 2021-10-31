@@ -6,9 +6,14 @@
     height: 230px;
 }
 .btn-service{
-    background-color: goldenrod;
+    background-color: tomato;
     font-weight: bold;
+    color: white;
 }
 .btn-service:hover{
     background-color: skyblue;
+    color: black;
+}
+.body-text{
+    color: rgb(179, 101, 82);
 }

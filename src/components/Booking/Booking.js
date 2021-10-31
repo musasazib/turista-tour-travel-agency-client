@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import './Booking.css';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
+import Footer from '../Shared/Header/Footer/Footer';
 
 const Booking = () => {
 
@@ -46,7 +48,7 @@ const Booking = () => {
     // style={sectionStyle}
     return (
         <div>
-            <h1 className="pt-5 text-center text-info">
+            <h1 className="pt-5 text-center text-style">
                 Please Booking Place
             </h1>
             <div className="login-box w-50 m-auto mt-5">
@@ -97,11 +99,12 @@ const Booking = () => {
 
                             {errors.exampleRequired && <span>This field is required</span>}
 
-                            <input type="submit" className="btn btn-info w-50 mb-3" />
+                            <input type="submit" className="btn btn-style w-50 mb-5" />
                         </form>
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

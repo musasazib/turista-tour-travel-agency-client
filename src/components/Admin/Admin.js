@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import Footer from '../Shared/Header/Footer/Footer';
 import './Admin.css';
 
 const Admin = () => {
@@ -31,7 +32,8 @@ const Admin = () => {
     return (
         <div>
             <div className="container">
-                <h2>Total Users: {services.length}</h2>
+                <h2 className="m-5 header-style">Total Users</h2>
+                <h4 className="m-3 header-style-two">Total Users {services.length}</h4>
                 <Table striped bordered hover>
                     <thead>
                         <tr>
@@ -51,7 +53,7 @@ const Admin = () => {
                                 <td>{pd.price}</td>
                                 <button
                                     onClick={() => handleDeleteUser(pd._id)}
-                                    className="btn bg-danger p-2"
+                                    className="btn-book p-2"
                                 >
                                     Cancel
                                 </button>
@@ -60,6 +62,7 @@ const Admin = () => {
                     ))}
                 </Table>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

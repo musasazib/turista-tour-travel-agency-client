@@ -1,0 +1,13 @@
+.text-style{
+    color: tomato;
+    font-weight: bold;
+}
+.btn-style{
+    background-color: tomato;
+    color: white;
+    font-weight: bold;
+}
+.btn-style:hover{
+    background-color: skyblue;
+    color: black;
+}

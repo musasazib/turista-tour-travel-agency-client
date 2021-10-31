@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import './MyBooking.css';
 import { Table } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
+import Footer from '../Shared/Header/Footer/Footer';
 
 const MyBooking = () => {
     const { user } = useAuth();
@@ -32,7 +34,8 @@ const MyBooking = () => {
     return (
         <div>
             <div className="container">
-                <h2>My Booking: {booking?.length}</h2>
+                <h2 className="m-5 header-style">My Booking</h2>
+                <h4 className="m-3 header-style-two">My Total Booking: {booking?.length}</h4>
                 <Table striped bordered hover>
                     <thead>
                         <tr>
@@ -52,7 +55,7 @@ const MyBooking = () => {
                                 <td>{pd.date}</td>
                                 <button
                                     onClick={() => handleDeleteUser(pd._id)}
-                                    
+                                   className="btn-book" 
                                 >
                                     Cancel
                                 </button>
@@ -61,6 +64,10 @@ const MyBooking = () => {
                     ))}
                 </Table>
             </div>
+            <br />
+            <br />
+            <br />
+            <Footer></Footer>
         </div>
     );
 };

@@ -5,7 +5,15 @@
     margin: 20px;
 }
 .all-btn{
-    background-color: brown;
+    background-color: tomato;
     font-weight: bold;
     color: white;
+}
+.header-style{
+    color: tomato;
+    font-weight: bold;
+}
+.all-btn:hover{
+    background-color: skyblue;
+    color: black;
 }
