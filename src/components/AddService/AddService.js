@@ -2,7 +2,7 @@ import React from 'react';
 import './AddService.css';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
-import Footer from '../Shared/Header/Footer/Footer';
+import Footer from '../Shared/Footer/Footer';
 
 
 const AddService = () => {

@@ -3,14 +3,13 @@ import './Booking.css';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import Footer from '../Shared/Header/Footer/Footer';
+import Footer from '../Shared/Footer/Footer';
 
 const Booking = () => {
 
     const { user } = useAuth();
 
     const { serviceId } = useParams();
-    console.log(serviceId, 'vvvvvvvv')
     const [details, setDetails] = useState([]);
     console.log(details)
     useEffect(() => {
@@ -18,15 +17,15 @@ const Booking = () => {
             .then(res => res.json())
             .then(data => {
                 const book = data.find(td => td._id === serviceId);
-                console.log(data,"yyyyyyyyyy")
                 setDetails(book)
+                
             });
     }, [serviceId])
     // const { placeName, price } = details;
-    console.log(details?.placeName,'xxxxxxx')
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm();
 
@@ -37,8 +36,14 @@ const Booking = () => {
             body: JSON.stringify(data),
         })
             .then((res) => res.json())
-            .then((result) => console.log(result));
-        console.log(data);
+            .then((result) => {
+                if (data.insertedId) {
+                    alert('Added successfully');
+                    reset();
+                }
+                console.log(result);
+            });
+        
     };
 
     
