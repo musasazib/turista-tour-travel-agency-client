@@ -13,7 +13,7 @@ const Header = () => {
             <Navbar bg="dark" variant="dark" sticky="top" collapseOnSelect expand="lg" >
                 <Container className="nav-link">
                     <Navbar.Brand as={Link} to="/home"><img
-
+                        src="https://i.ibb.co/9gRJ1Gs/logo-1.png"
                         height="35 "
                         className="d-inline-block align-top"
                         alt="React Bootstrap logo"

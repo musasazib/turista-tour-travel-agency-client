@@ -11,7 +11,7 @@ const WhyChoose = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-12 col-md-6">
-                        {/* <img src={img} alt="" className="img-fluid rounded" /> */}
+                        <img src="https://i.ibb.co/3Sg4XZx/why.png" alt="" className="img-fluid rounded" />
                     </div>
                     <div className="col-12 col-md-6 text-header">
                         <h4 >Exclusive Packages</h4>
