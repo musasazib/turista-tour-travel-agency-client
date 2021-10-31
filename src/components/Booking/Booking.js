@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Booking.css';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Footer from '../Shared/Header/Footer/Footer';
 
@@ -10,18 +10,20 @@ const Booking = () => {
     const { user } = useAuth();
 
     const { serviceId } = useParams();
-    const [details, setDetails] = useState({});
+    console.log(serviceId, 'vvvvvvvv')
+    const [details, setDetails] = useState([]);
     console.log(details)
     useEffect(() => {
         fetch('https://secret-sands-29500.herokuapp.com/services')
             .then(res => res.json())
             .then(data => {
                 const book = data.find(td => td._id === serviceId);
+                console.log(data,"yyyyyyyyyy")
                 setDetails(book)
             });
     }, [serviceId])
-    const { placeName, price } = details || {};
-    console.log(placeName,'xxxxxxx')
+    // const { placeName, price } = details;
+    console.log(details?.placeName,'xxxxxxx')
     const {
         register,
         handleSubmit,
@@ -39,13 +41,7 @@ const Booking = () => {
         console.log(data);
     };
 
-    // const sectionStyle = {
-    //     width: "100%",
-    //     height: "400px",
-    //     backgroundImage: "url(" + { backgroundImg } + ")"
-    // };
-
-    // style={sectionStyle}
+    
     return (
         <div>
             <h1 className="pt-5 text-center text-style">
@@ -76,7 +72,7 @@ const Booking = () => {
                             <br />
                             <input
                                 {...register("placeName", { required: true })}
-                                defaultValue={placeName}
+                                defaultValue={details?.placeName}
                                 className="p-2 mb-2"
                             />
                             <br />
@@ -92,7 +88,7 @@ const Booking = () => {
                             <br />
                             <input
                                 {...register("price", { required: true })}
-                                defaultValue={price}
+                                defaultValue={details?.price}
                                 className="p-2 mb-2"
                             />
                             <br />
