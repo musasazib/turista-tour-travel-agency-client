@@ -12,3 +12,9 @@
 .footer-h2{
     color: tomato;
 }
+.footer-text-all h4, p{
+    text-align: left;
+}
+.image-style{
+    margin-bottom: 10px;
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
-import Footer from '../Shared/Header/Footer/Footer';
+import Footer from '../Shared/Footer/Footer';
 import './Admin.css';
 
 const Admin = () => {

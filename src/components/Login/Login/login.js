@@ -2,7 +2,7 @@ import React from 'react';
 import './Login.css';
 import { useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import Footer from '../../Shared/Header/Footer/Footer';
+import Footer from '../../Shared/Footer/Footer';
 
 const Login = () => {
     const { signInUsingGoogle, setUser } = useAuth();

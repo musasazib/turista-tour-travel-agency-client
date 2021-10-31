@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './MyBooking.css';
 import { Table } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
-import Footer from '../Shared/Header/Footer/Footer';
+import Footer from '../Shared/Footer/Footer';
 
 const MyBooking = () => {
     const { user } = useAuth();
