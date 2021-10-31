@@ -28,6 +28,9 @@ const AddService = () => {
                 <input {...register("price")} placeholder="price" />
                 <input className="btn-style" type="submit" />
             </form>
+            <br />
+            <br />
+            <br />
             <Footer></Footer>
         </div>
     );

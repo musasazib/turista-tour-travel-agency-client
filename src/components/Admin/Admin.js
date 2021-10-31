@@ -41,6 +41,7 @@ const Admin = () => {
                             <th>User Name</th>
                             <th>Place Name</th>
                             <th>Amount</th>
+                            <th>Date</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -51,6 +52,7 @@ const Admin = () => {
                                 <td>{pd.name}</td>
                                 <td>{pd.placeName}</td>
                                 <td>{pd.price}</td>
+                                <td>{pd.date}</td>
                                 <button
                                     onClick={() => handleDeleteUser(pd._id)}
                                     className="btn-book p-2"
@@ -62,6 +64,9 @@ const Admin = () => {
                     ))}
                 </Table>
             </div>
+            <br />
+            <br />
+            <br />
             <Footer></Footer>
         </div>
     );

@@ -37,8 +37,8 @@ const Booking = () => {
         })
             .then((res) => res.json())
             .then((result) => {
-                if (data.insertedId) {
-                    alert('Added successfully');
+                if (result.insertedId) {
+                    alert('Booking successfully');
                     reset();
                 }
                 console.log(result);
@@ -85,8 +85,9 @@ const Booking = () => {
                             <br />
                             <input
                                 {...register("date", { required: true })}
-                                defaultValue={new Date()}
+                                // defaultValue={}
                                 className="p-2 mb-2"
+                                type="date"
                             />
                             <br />
                             <label>Price</label>
