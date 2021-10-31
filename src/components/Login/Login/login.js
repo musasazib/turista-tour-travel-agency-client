@@ -1,6 +1,8 @@
 import React from 'react';
+import './Login.css';
 import { useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import Footer from '../../Shared/Header/Footer/Footer';
 
 const Login = () => {
     const { signInUsingGoogle, setUser } = useAuth();
@@ -22,9 +24,12 @@ const Login = () => {
     };
 
     return (
-        <div>
-            <h2>Please Login</h2>
-            <button onClick={handleGoogleLogin}>Google Sign In</button>
+        <div className="container-login">
+            <div className="login">
+                <h2 className=" header-style p-4">Please Login</h2>
+                <button className="btn btn-style" onClick={handleGoogleLogin}>Google Sign In</button>
+            </div>
+            <Footer></Footer>
         </div>
     );
 };
