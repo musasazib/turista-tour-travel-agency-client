@@ -33,7 +33,7 @@ const Admin = () => {
         <div>
             <div className="container">
                 <h2 className="m-5 header-style">Total Users</h2>
-                <h4 className="m-3 header-style-two">Total Users {services.length}</h4>
+                <h4 className="m-3 header-style-two">Total Users: {services.length}</h4>
                 <Table striped bordered hover>
                     <thead>
                         <tr>

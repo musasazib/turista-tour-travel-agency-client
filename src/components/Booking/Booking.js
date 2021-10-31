@@ -5,9 +5,17 @@ import { useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Footer from '../Shared/Footer/Footer';
 
+
 const Booking = () => {
 
     const { user } = useAuth();
+
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors },
+    } = useForm();
 
     const { serviceId } = useParams();
     const [details, setDetails] = useState([]);
@@ -18,16 +26,11 @@ const Booking = () => {
             .then(data => {
                 const book = data.find(td => td._id === serviceId);
                 setDetails(book)
-                
+
             });
-    }, [serviceId])
+    }, [serviceId, details])
     // const { placeName, price } = details;
-    const {
-        register,
-        handleSubmit,
-        reset,
-        formState: { errors },
-    } = useForm();
+
 
     const onSubmit = (data) => {
         fetch("https://secret-sands-29500.herokuapp.com/orders", {
@@ -39,14 +42,16 @@ const Booking = () => {
             .then((result) => {
                 if (result.insertedId) {
                     alert('Booking successfully');
-                    reset();
+                    reset({ name: '', email: '', placeName: '', price: '' });
                 }
                 console.log(result);
             });
-        
+
+
     };
 
-    
+
+
     return (
         <div>
             <h1 className="pt-5 text-center text-style">
@@ -109,7 +114,7 @@ const Booking = () => {
             <br />
             <br />
             <br />
-            
+
             <Footer></Footer>
         </div>
     );
