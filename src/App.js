@@ -7,6 +7,7 @@ import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login/login';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import MyBooking from './components/MyBooking/MyBooking';
+import NotFound from './components/NotFound/NotFound';
 import Header from './components/Shared/Header/Header';
 import AuthProvider from './context/AuthProvider';
 
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <Route path="/login">
               <Login></Login>
+            </Route>
+            <Route path="*">
+              <NotFound></NotFound>
             </Route>
           </Switch>
         </Router>
