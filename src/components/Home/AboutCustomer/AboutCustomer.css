@@ -1,0 +1,10 @@
+.image{
+    width: 100px;
+    height: 100px;
+}
+.background{
+    background-image: url(https://i.ibb.co/cFS565m/pexels-photo-5480713.jpg);
+}
+.text-color-about{
+    color: tomato;
+}
