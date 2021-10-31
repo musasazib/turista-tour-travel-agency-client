@@ -47,8 +47,8 @@ const Admin = () => {
                             <tr>
                                 <td>{index + 1}</td>
                                 <td>{pd.name}</td>
-                                <td>{pd.date}</td>
-                                <td>{pd.description}</td>
+                                <td>{pd.placeName}</td>
+                                <td>{pd.price}</td>
                                 <button
                                     onClick={() => handleDeleteUser(pd._id)}
                                     className="btn bg-danger p-2"

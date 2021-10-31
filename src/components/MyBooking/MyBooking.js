@@ -39,7 +39,7 @@ const MyBooking = () => {
                             <th>SL</th>
                             <th>Place Name</th>
                             <th>Tour Price</th>
-                            <th>Image Link</th>
+                            <th>Date</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -47,14 +47,14 @@ const MyBooking = () => {
                         <tbody>
                             <tr>
                                 <td>{index+1}</td>
+                                <td>{pd.placeName}</td>
+                                <td>{pd.price}</td>
                                 <td>{pd.date}</td>
-                                <td>{pd.description}</td>
-                                <td>{pd.image}</td>
                                 <button
                                     onClick={() => handleDeleteUser(pd._id)}
-                                    className="btn bg-danger p-2"
+                                    
                                 >
-                                    Delete
+                                    Cancel
                                 </button>
                             </tr>
                         </tbody>

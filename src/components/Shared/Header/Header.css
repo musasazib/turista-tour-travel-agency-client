@@ -3,7 +3,7 @@
     font-size: 18px;
 }
 .nav-link a:hover{
-    color: brown;
+    color: tomato;
     font-weight: bold;
 }
 .logout-btn{
@@ -19,8 +19,8 @@
 .user-name{
     text-decoration: none;
     font-size: 20px;
-    color: brown;
+    color: tomato;
 }
 .user-icon{
-    color: brown;
+    color: tomato;
 }

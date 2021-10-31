@@ -1,4 +1,6 @@
 import React from 'react';
+import Footer from '../../Shared/Header/Footer/Footer';
+import WhyChoose from '../../WhyChoose/WhyChoose';
 import Banner from '../Banner/Banner';
 import Services from '../Services/Services';
 
@@ -6,8 +8,9 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <h2> xxxxxxxxxx </h2>
             <Services></Services>
+            <WhyChoose></WhyChoose>
+            <Footer></Footer>
         </div>
     );
 };

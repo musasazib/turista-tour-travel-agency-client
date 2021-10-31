@@ -11,7 +11,7 @@ const Services = () => {
     }, [])
     return (
         <div>
-            <h2 className="text-color mt-5 text-center">CHOOSE YOUR PRODUCT AND BOOST YOUR BODY STRENGTH</h2>
+            <h2 className="text-color mt-5 text-center">Travel Most Popular Place <br /> In The World</h2>
             <div className="product-container">
                 {
                     services.map(service => <Service

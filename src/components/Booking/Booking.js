@@ -18,7 +18,8 @@ const Booking = () => {
                 setDetails(book)
             });
     }, [serviceId])
-    const { name, description } = details || {};
+    const { placeName, price } = details || {};
+    console.log(placeName,'xxxxxxx')
     const {
         register,
         handleSubmit,
@@ -36,45 +37,67 @@ const Booking = () => {
         console.log(data);
     };
 
+    // const sectionStyle = {
+    //     width: "100%",
+    //     height: "400px",
+    //     backgroundImage: "url(" + { backgroundImg } + ")"
+    // };
+
+    // style={sectionStyle}
     return (
         <div>
-            <h1 className="mt-5 text-center text-info">
+            <h1 className="pt-5 text-center text-info">
                 Please Booking Place
             </h1>
-            <div className="login-box w-25 m-auto mt-5">
+            <div className="login-box w-50 m-auto mt-5">
                 <div className="event-box border border d-flex justify-content-center align-items-center">
                     <div className="login-form">
                         <form onSubmit={handleSubmit(onSubmit)}>
+                            <label className="mt-4">Name:</label>
+                            <br />
                             <input
                                 {...register("name")}
+                                Name
                                 defaultValue={user?.displayName}
-                                className="p-2 m-2"
+                                className="p-2 mb-2"
                             />
                             <br />
-
+                            <label>Email</label>
+                            <br />
                             <input
                                 {...register("email", { required: true })}
                                 defaultValue={user?.email}
-                                className="p-2 m-2"
+                                className="p-2 mb-2"
                             />
+                            <br />
+                            <label>Place Name:</label>
+                            <br />
+                            <input
+                                {...register("placeName", { required: true })}
+                                defaultValue={placeName}
+                                className="p-2 mb-2"
+                            />
+                            <br />
+                            <label>Date</label>
                             <br />
                             <input
                                 {...register("date", { required: true })}
-                                placeholder="date"
-                                defaultValue={name}
-                                className="p-2 m-2"
+                                defaultValue={new Date()}
+                                className="p-2 mb-2"
                             />
                             <br />
+                            <label>Price</label>
+                            <br />
                             <input
-                                {...register("description", { required: true })}
-                                defaultValue={description}
-                                className="p-2 m-2"
+                                {...register("price", { required: true })}
+                                defaultValue={price}
+                                className="p-2 mb-2"
                             />
                             <br />
 
                             {errors.exampleRequired && <span>This field is required</span>}
 
-                            <input type="submit" className="btn btn-info w-50" />
+                            <input type="submit" className="btn btn-info w-50 mb-3" />
                         </form>
                     </div>
                 </div>
